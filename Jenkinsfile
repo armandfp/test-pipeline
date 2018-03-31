@@ -9,6 +9,7 @@ pipeline {
         stage('test build') {
             steps {
                 echo 'test build'
+                echo 'extra test build'
                 sh 'sleep 3'
             }
         }
