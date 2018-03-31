@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage('test login') {
             steps {
+                echo 'connect to server'
                 echo 'test login'
             }
         }
