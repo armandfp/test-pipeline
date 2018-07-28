@@ -28,7 +28,7 @@ node {
 def notifyBuild(String buildStatus = 'STARTED') {
     buildStatus =  buildStatus ?: 'SUCCESS'
     def summary = ""
-    def info = "${env.JOB_NAME}:${env.BRANCH_NAME} [${env.BUILD_NUMBER}]"
+    def info = "${env.JOB_NAME} [${env.BUILD_NUMBER}]"
     color = 'BLUE'
     colorCode = '#439FE0'
 
@@ -49,7 +49,7 @@ def notifyBuild(String buildStatus = 'STARTED') {
     }
 
     // Send notifications
-    //if(env.BRANCH == "master") {
+    if(env.BRANCH_NAME == "master") {
         slackSend (color: colorCode, message: summary)
-    //}
+    }
 }
